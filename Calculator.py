@@ -10,7 +10,7 @@ class Calculator(App):
         self.last_operator = None
         self.last_dot = False
         main_layout = BoxLayout(orientation="vertical")
-        self.solution = TextInput(background_color="green", foreground_color="grey",
+        self.solution = TextInput(background_color="black", foreground_color="white",
                                   halign="right", multiline=False, font_size=55, readonly=True)
         main_layout.add_widget(self.solution)
         buttons = [
@@ -23,13 +23,13 @@ class Calculator(App):
             v_layout = BoxLayout()
             for text in set:
                 button = Button(
-                    text=text, font_size=33, background_color="yellow",
+                    text=text, font_size=33, background_color="grey",
                     pos_hint={"center_x": 0.5, "center_y": 0.5})
                 button.bind(on_press=self.on_press)
                 v_layout.add_widget(button)
             main_layout.add_widget(v_layout)
         equal = Button(
-                text="=", font_size=33, background_color="yellow",
+                text="=", font_size=33, background_color="grey",
                 pos_hint={"center_x": 0.5, "center_y": 0.5})
         equal.bind(on_press=self.evaluate)
         main_layout.add_widget(equal)
